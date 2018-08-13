@@ -112,8 +112,6 @@ In "# Code cell 15" in `process_image()` I implemented the pipeline. This used `
 
 In "# Code cell 16" I ran the pipeline against some test images and below are the outputs;
 
-pUltimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
-
 ![alt text][pipe1]
 ![alt text][pipe2]
 ![alt text][pipe3]
@@ -134,7 +132,7 @@ Here's a [link to my debug video result](./test_videos_output/project_video_debu
 
 In '# Code Cell 13' is where I implemented the functions (from the lessons) then took the boxes from `find_cars`, overlayed them as a heatmap map, and then with thresholding and labeling using `scipy.ndimage.measurements.label` ended up with a single bounding box.
 
-I saved the last heatmaps from the previous frames, and then combined them and used a higher treshold to remove false positives. This removed most of the false positives.
+In "# Code Cell 15" I implemented a `FrameHistory` class to keep track of state while processing the video. In this object I saved the last heatmaps from the previous frames, and then combined them and used a higher treshold to remove false positives. This removed most of the false positives.
 
 
 ---
