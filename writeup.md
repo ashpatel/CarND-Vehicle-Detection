@@ -21,6 +21,7 @@ The goals / steps of this project are the following:
 [find_cars]: ./examples/find_cars.png
 [scale]: ./examples/scale.png
 [hog4]: ./examples/hog4.png
+[hog8]: ./examples/hog8.png
 [hog16]: ./examples/hog16.png
 [pipe1]: ./examples/pipe1.png
 [pipe2]: ./examples/pipe2.png
@@ -61,15 +62,16 @@ Further in that same cell, I then explored different color spaces. For a randoml
 ![alt text][color_notcar]
 
 In "# Code Cell 3" is the code that extracts the HOG features using `skimage.hog()`. In "# Code Cell 7" I visualized the HOG features using various Color Spaces (RGB, HSV, LUV, YCrCb and YYV) and pixels_per_cell values.
-You can see an example of `pixels_per_cell=4` and `pixels_per_cell=16`
+You can see an example of `pixels_per_cell` with values 4,8 and 16.
 
 ![alt text][hog4]
+![alt text][hog8]
 ![alt text][hog16]
 
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I settled on 16 as the pixels_per_cell, as that gave better HOG features that looked like the outlines of cars and were better differentiated vs the not-car HOG features. Better for the LinearSVM to work against.
+I settled on 8 as the pixels_per_cell, as that gave better HOG features that looked like the outlines of cars and were better differentiated vs the not-car HOG features. Better for the LinearSVM to work against. This is also the first point where the outlines were clear, while with higher values there was a loss of too much data.
 
 I also played around with the value of orient and settled on 11.
 
